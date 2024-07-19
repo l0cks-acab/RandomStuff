@@ -37,7 +37,7 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("Scroll Bar Test", "herbs.acab", "1.2.0")]
+    [Info("Scroll Bar Test", "durrymuncher", "1.2.0")]
     public class ScrollBarTest : RustPlugin
     {
         private const string PanelName = "ScrollPanel";
