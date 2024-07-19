@@ -1,3 +1,37 @@
+/*
+Logic:
+We create a base panel centered on the screen. This panel is the parent for all other UI elements.
+This panel is defined with AnchorMin = "0.3 0.3" and AnchorMax = "0.7 0.7", which positions it in the middle of the screen.
+Scrollable Area:
+
+Within the base panel, we add another panel to serve as the scrollable area.
+This panel includes a CuiScrollViewComponent with ScrollDirection set to "Vertical" to enable vertical scrolling.
+The scrollable area takes up most of the base panel's width (AnchorMin = "0.0 0.0", AnchorMax = "0.95 1.0"), leaving room for the scroll bar on the right.
+Adding Content to the Scrollable Area:
+
+We add multiple CuiLabel elements inside the scrollable area. These labels represent the items in the list.
+Each label's position is set dynamically to create a vertical list.
+Scroll Bar Background:
+
+We add a panel on the right side of the base panel to serve as the background of the scroll bar.
+This panel is defined with AnchorMin = "0.95 0", AnchorMax = "1 1", which positions it on the right side.
+Scroll Bar Thumb:
+
+We add a smaller panel within the scroll bar background to represent the thumb.
+Initially, the thumb's position is set manually, but it will be updated dynamically based on the scroll position.
+Dynamic Update of the Scroll Bar Thumb:
+
+We use a timer to repeatedly call the UpdateScrollBarThumb method.
+This method calculates the thumb's position based on the current scroll position.
+The thumb's height (thumbHeight) is set to a fixed value. You can adjust this value to fit your UI design.
+The scroll position (scrollPos) is obtained using the GetScrollPosition method. This method should return a value between 0 and 1, representing the scroll offset.
+Calculating the Thumb's Position:
+
+thumbMin and thumbMax represent the thumb's bottom and top positions, respectively.
+The calculation takes into account the scroll position and the height of the thumb to position the thumb correctly within the scroll bar.
+The thumb's position is updated by adding a new CuiElement with the calculated AnchorMin and AnchorMax values.
+*/
+
 using Oxide.Game.Rust.Cui;
 using UnityEngine;
 
